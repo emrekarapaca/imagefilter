@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>825</width>
+    <height>417</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>825</width>
+    <height>417</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>825</width>
+    <height>417</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../icons/main_icon.png</normaloff>../icons/main_icon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="segmentation_groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>207</y>
+      <width>180</width>
+      <height>85</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Segmentation</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="multi_otsu_button">
+       <property name="text">
+        <string>Multi-Otsu</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="chan_vese_button">
+       <property name="text">
+        <string>Chan-Vese</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="morphological_snakes_button">
+       <property name="text">
+        <string>Morph. Snakes</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="conversion_groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>145</y>
+      <width>176</width>
+      <height>56</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Conversion</string>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="rgb_to_gs_button">
+       <property name="text">
+        <string>RGB to GS</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="rgb_to_hsv_button">
+       <property name="text">
+        <string>RGB to HSV</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QTabWidget" name="source_output_tab_widget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>180</width>
+      <height>129</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="source_tab_widget">
+     <attribute name="title">
+      <string>Source</string>
+     </attribute>
+     <layout class="QFormLayout" name="formLayout_2">
+      <item row="0" column="0">
+       <widget class="QPushButton" name="open_source_button">
+        <property name="text">
+         <string>Open</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../icons/open_icon.png</normaloff>../icons/open_icon.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="export_as_source_button">
+        <property name="text">
+         <string>Export as</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../icons/export_as_icon.png</normaloff>../icons/export_as_icon.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="clear_source_button">
+        <property name="text">
+         <string>Clear</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../icons/clear_icon.png</normaloff>../icons/clear_icon.png</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="output_tab_widget">
+     <attribute name="title">
+      <string>Output</string>
+     </attribute>
+     <layout class="QFormLayout" name="formLayout_3">
+      <item row="0" column="0">
+       <widget class="QPushButton" name="save_output_button">
+        <property name="text">
+         <string>Save</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../icons/save_icon.png</normaloff>../icons/save_icon.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="undo_output_button">
+        <property name="text">
+         <string>Undo</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../icons/undo_icon.png</normaloff>../icons/undo_icon.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="save_as_output_button">
+        <property name="text">
+         <string>Save as</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../icons/save_as_icon.png</normaloff>../icons/save_as_icon.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="redo_output_button">
+        <property name="text">
+         <string>Redo</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../icons/redo_icon.png</normaloff>../icons/redo_icon.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="export_as_output_button">
+        <property name="text">
+         <string>Export as</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../icons/export_as_icon.png</normaloff>../icons/export_as_icon.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="clear_output_button">
+        <property name="text">
+         <string>Clear</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../icons/clear_icon.png</normaloff>../icons/clear_icon.png</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="edge_detection_groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>298</y>
+      <width>176</width>
+      <height>85</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Edge detection</string>
+    </property>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="roberts_button">
+       <property name="text">
+        <string>Roberts</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="sobel_button">
+       <property name="text">
+        <string>Sobel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="scharr_button">
+       <property name="text">
+        <string>Scharr</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="prewitt_button">
+       <property name="text">
+        <string>Prewitt</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>20</y>
+      <width>611</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QGroupBox" name="source_groupBox">
+       <property name="title">
+        <string>Source</string>
+       </property>
+       <widget class="QLabel" name="source_label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>280</width>
+          <height>280</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>280</width>
+          <height>280</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>280</width>
+          <height>280</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="output_groupBox">
+       <property name="title">
+        <string>Output</string>
+       </property>
+       <widget class="QLabel" name="output_label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>280</width>
+          <height>280</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>280</width>
+          <height>280</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>280</width>
+          <height>280</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>825</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="file_menu">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuExport_as">
+     <property name="title">
+      <string>Export as</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../icons/export_as_icon.png</normaloff>../icons/export_as_icon.png</iconset>
+     </property>
+     <addaction name="export_as_source_action"/>
+     <addaction name="export_as_output_action"/>
+    </widget>
+    <addaction name="open_source_action"/>
+    <addaction name="save_output_action"/>
+    <addaction name="save_as_output_action"/>
+    <addaction name="menuExport_as"/>
+    <addaction name="separator"/>
+    <addaction name="close_action"/>
+   </widget>
+   <widget class="QMenu" name="edit_menu">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <widget class="QMenu" name="edit_clear_menu">
+     <property name="title">
+      <string>Clear</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../icons/clear_icon.png</normaloff>../icons/clear_icon.png</iconset>
+     </property>
+     <addaction name="clear_source_action"/>
+     <addaction name="clear_output_action"/>
+    </widget>
+    <addaction name="edit_clear_menu"/>
+    <addaction name="undo_output_action"/>
+    <addaction name="redo_output_action"/>
+   </widget>
+   <widget class="QMenu" name="conversion_menu">
+    <property name="title">
+     <string>Conversion</string>
+    </property>
+    <addaction name="rgb_to_gs_action"/>
+    <addaction name="rgb_to_hsv_action"/>
+   </widget>
+   <widget class="QMenu" name="segmentation_menu">
+    <property name="title">
+     <string>Segmentation</string>
+    </property>
+    <addaction name="multi_otsu_action"/>
+    <addaction name="chan_vese_action"/>
+    <addaction name="morphological_snakes_action"/>
+   </widget>
+   <widget class="QMenu" name="edge_detection_menu">
+    <property name="title">
+     <string>Edge detection</string>
+    </property>
+    <addaction name="roberts_action"/>
+    <addaction name="sobel_action"/>
+    <addaction name="scharr_action"/>
+    <addaction name="prewitt_action"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="file_menu"/>
+   <addaction name="edit_menu"/>
+   <addaction name="conversion_menu"/>
+   <addaction name="segmentation_menu"/>
+   <addaction name="edge_detection_menu"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <action name="open_source_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/open_icon.png</normaloff>../icons/open_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Source</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="save_output_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/save_icon.png</normaloff>../icons/save_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Output</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="save_as_output_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/save_as_icon.png</normaloff>../icons/save_as_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save as Output</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="export_as_source_action">
+   <property name="text">
+    <string>Source</string>
+   </property>
+  </action>
+  <action name="export_as_output_action">
+   <property name="text">
+    <string>Output</string>
+   </property>
+  </action>
+  <action name="close_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/close_icon.png</normaloff>../icons/close_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F4</string>
+   </property>
+  </action>
+  <action name="clear_source_action">
+   <property name="text">
+    <string>Source</string>
+   </property>
+  </action>
+  <action name="clear_output_action">
+   <property name="text">
+    <string>Output</string>
+   </property>
+  </action>
+  <action name="undo_output_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/undo_icon.png</normaloff>../icons/undo_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo Output</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="redo_output_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/redo_icon.png</normaloff>../icons/redo_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo Output</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="rgb_to_gs_action">
+   <property name="text">
+    <string>RGB to Grayscale</string>
+   </property>
+  </action>
+  <action name="rgb_to_hsv_action">
+   <property name="text">
+    <string>RGB to HSV</string>
+   </property>
+  </action>
+  <action name="multi_otsu_action">
+   <property name="text">
+    <string>Multi-Otsu</string>
+   </property>
+  </action>
+  <action name="chan_vese_action">
+   <property name="text">
+    <string>Chan-Vese</string>
+   </property>
+  </action>
+  <action name="morphological_snakes_action">
+   <property name="text">
+    <string>Morphological Snakes</string>
+   </property>
+  </action>
+  <action name="roberts_action">
+   <property name="text">
+    <string>Roberts</string>
+   </property>
+  </action>
+  <action name="sobel_action">
+   <property name="text">
+    <string>Sobel</string>
+   </property>
+  </action>
+  <action name="scharr_action">
+   <property name="text">
+    <string>Scharr</string>
+   </property>
+  </action>
+  <action name="prewitt_action">
+   <property name="text">
+    <string>Prewitt</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/about_icon.png</normaloff>../icons/about_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>source_output_tab_widget</tabstop>
+  <tabstop>open_source_button</tabstop>
+  <tabstop>export_as_source_button</tabstop>
+  <tabstop>clear_source_button</tabstop>
+  <tabstop>save_output_button</tabstop>
+  <tabstop>undo_output_button</tabstop>
+  <tabstop>save_as_output_button</tabstop>
+  <tabstop>redo_output_button</tabstop>
+  <tabstop>export_as_output_button</tabstop>
+  <tabstop>clear_output_button</tabstop>
+  <tabstop>rgb_to_gs_button</tabstop>
+  <tabstop>rgb_to_hsv_button</tabstop>
+  <tabstop>multi_otsu_button</tabstop>
+  <tabstop>chan_vese_button</tabstop>
+  <tabstop>morphological_snakes_button</tabstop>
+  <tabstop>roberts_button</tabstop>
+  <tabstop>sobel_button</tabstop>
+  <tabstop>scharr_button</tabstop>
+  <tabstop>prewitt_button</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
